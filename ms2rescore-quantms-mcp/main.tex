@@ -6,7 +6,6 @@
 \usepackage[margin=1in]{geometry}  % Standard margin
 \usepackage{setspace}         % Adjust line spacing
 \usepackage{authblk}          % For authors and affiliations
-\usepackage{cite}             % For citations
 \usepackage{caption}          % For figure captions
 \usepackage{subfigure} 
 \usepackage[numbers, sort]{natbib} % 保证参考文献不会出现乱序
@@ -16,14 +15,16 @@
 \author[1,2]{Dai Chengxin}
 \author[3]{Ralf Gabriels}
 \author[3]{Robbin Bouwmeester}
-\author[4,5]{Timo Sachsenberg}
-\author[6]{Yasset Perez-Riverol}
+\author[4]{Mingze Bai}
+\author[5,6]{Timo Sachsenberg}
+\author[7]{Yasset Perez-Riverol\thanks{Corresponding author: yperez@ebi.ac.uk}}
 \affil[1]{State Key Laboratory of Medical Proteomics, Beijing Proteome Research Center, National Center for Protein Sciences (Beijing), Beijing Institute of Lifeomics, 102206, Beijing, China}
 \affil[2]{International Academy of Phronesis Medicine (Guangdong), 510320, Guangdong, China}
 \affil[3]{VIB-UGent Center for Medical Biotechnology, VIB, 9052 Ghent, Belgium}
-\affil[4]{Department of Computer Science, Applied Bioinformatics, University of Tübingen, Tübingen, Germany}
-\affil[5]{Institute for Bioinformatics and Medical Informatics, University of Tübingen, Tübingen, Germany}
-\affil[6]{European Molecular Biology Laboratory, European Bioinformatics Institute, Wellcome Genome Campus, Cambridge, United Kingdom}
+\affil[4]{Chongqing Key Laboratory of Big Data for Bio Intelligence, Chongqing University of Posts and Telecommunications, Chongqing, China}
+\affil[5]{Department of Computer Science, Applied Bioinformatics, University of Tübingen, Tübingen, Germany}
+\affil[6]{Institute for Bioinformatics and Medical Informatics, University of Tübingen, Tübingen, Germany}
+\affil[7]{European Molecular Biology Laboratory, European Bioinformatics Institute, Wellcome Genome Campus, Cambridge, United Kingdom}
 \date{}
 
 % Document Begins
@@ -53,7 +54,7 @@ Previously, quantms did not leverage measurable peptide properties such as fragm
 \section{Methods}
 
 \subsection{MS/MS Data and quantms Search Results}
-To develop and evaluate the performance of the quantms-integrated MS2Rescore workflow, four publicly available benchmark datasets were downloaded from PRIDE Archive under the identifiers PXD001819, PXD019643, and PXD026824, and from CPTAC under the identifier PDC000125. The PXD001819 dataset contains 48 Sigma UPS1 proteins spiked into a background of yeast cell lysate at nine different concentrations: 0.05, 0.125, 0.25, 0.5, 2.5, 5, 12.5, 25, and 50 fmol/μL to evaluate quantification performance. We evaluated five different quantms workflow settings: (1) Comet, (2) Comet and MSGF+, (3) Comet with MS2Rescore, (4) Comet and MSGF+ with MS2Rescore, and (5) Comet, MSGF+, and SAGE with MS2Rescore to explore multiple search engines and their integration with MS2Rescore for improved identification and quantification results. All search parameters were the same as described in the previous publication. The quantms and MaxQuant search results at PSM and protein group levels are also available in parquet format in supplemental File S1.
+To develop and evaluate the performance of the quantms-integrated MS2Rescore workflow, four publicly available benchmark datasets were downloaded from PRIDE Archive under the identifiers PXD001819, PXD019643, and PXD026824, and from CPTAC under the identifier PDC000125. The PXD001819 dataset contains 48 Sigma UPS1 proteins spiked into a background of yeast cell lysate at nine different concentrations: 0.05, 0.125, 0.25, 0.5, 2.5, 5, 12.5, 25, and 50 fmol/$\mu$L to evaluate quantification performance. We evaluated five different quantms workflow settings: (1) Comet, (2) Comet and MSGF+, (3) Comet with MS2Rescore, (4) Comet and MSGF+ with MS2Rescore, and (5) Comet, MSGF+, and SAGE with MS2Rescore to explore multiple search engines and their integration with MS2Rescore for improved identification and quantification results. All search parameters were the same as described in the previous publication. The quantms and MaxQuant search results at PSM and protein group levels are also available in parquet format in supplemental File S1.
 
 \subsection{Rescoring Features and Postprocessing}
 Search engine features are generated using the OpenMS toolkit. The quantms-rescoring Python package integrates MS2Rescore and calculates various meaningful features based on the DeepLC-predicted and observed retention times, and the MS2PIP-predicted and observed MS2 peak intensities. Signal-to-noise ratio (SNR) features are also calculated for specific cases in the quantms-rescoring Python package. The Percolator module was subsequently used to rescore the common pool of PSMs for different feature combinations using different strategies: (1) a baseline setting with only the search engine features, (2) the baseline setting combined with features from MS2Rescore, and (3) the baseline setting combined with features from MS2Rescore and the quantmsutils package.
@@ -68,20 +69,20 @@ Filtering for a set of significant PSMs is generally performed using q-values an
 Moreover, we extracted the top 20 weights from Percolator to explore the impact of different features on rescoring for different search engines, shown in Supplemental Figure 1. We can see that more than half of the features are from MS2Rescore, and the distributions of features are different for the three search engines. The weight of SpecPearsonNorm is positive, indicating that a high SpecPearsonNorm value corresponds to a better hit. The weight of RtDiffBest is negative, indicating that large differences between observed and predicted retention time correspond to a worse score. It is interesting that peptide length becomes a significant feature after adding MS2Rescore features. The positive value demonstrates higher scores for longer peptides. One potential explanation for this phenomenon is that short peptides are less conducive to search engine identification due to fewer fragment ions.
 
 % Figure Example
-\begin{figure}[h!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\textwidth]{figures//PXD001819.jpg}
 	\caption{The number of identified spectra as a function of differing FDR levels for different workflow settings. (A) Results for the PXD001819 dataset. (B) Results for the PXD001819 dataset showing protein quantification. Five different workflow settings are shown: the combination of Comet search engine with Percolator rescoring, the combination of Comet with MSGF+, the combination of two search engines with MS2Rescore features, the combination of two search engines with MS2Rescore and SNR features, and the combination of three search engines with MS2Rescore and SNR features. Multiple search engines consensus identification, additional intensity-based and retention time-based features, and SNR features lead to both higher identification rates and high-quality identification.}
 	\label{fig:PXD001819_ms2rescore_pic}
 \end{figure}
 
-\subsection{quantms integrated with MS2Rescore drastically improves identification and quantification for large-scale TMT experiments}
+\subsection{quantms integrated with MS2Rescore improves identification and quantification for large-scale TMT experiments}
 We then applied this workflow to large-scale TMT experiments from CPTAC. Multiple search engines and rescoring significantly improved peptide identification and protein quantification, as shown in Figure~\ref{fig:PDC_ms2rescore}. The PSM identification rate was improved by 3.6\%, and 921 proteins were newly quantified when DeepLC and MS2PIP features were added, compared to the workflow without MS2Rescore enabled (Figure 2A,B). There are 59 newly quantified proteins whose abundance is located in the top 10\% (Figure 2C). To further explore the impact of these newly quantified proteins from the two search engines with MS2Rescore features workflow on downstream analysis, protein differential expression results from this workflow are shown in Figure 2. There are 27 newly quantified proteins that are significantly differentially expressed (Figure 2D). Among them, Yang et al. reported an association between significant upregulation of FOXG1 protein and prognosis in Clear Cell Renal Cell Carcinoma [10.18632/aging.204448]. This further illustrates that by incorporating rescoring features based on MS2PIP and DeepLC, the approach not only improves the sensitivity of spectral identification but also facilitates protein quantification, which ultimately contributes to biological knowledge discovery.
 
 Moreover, we extracted the top 20 SVM weights from Percolator to explore the impact of different features on rescoring for different search engines, shown in Supplemental Figure~\ref{fig:PDC_ms2rescore_weights}. For Comet identification results, SpecPearsonNorm, DotProdIonYNorm, and RtDiffBest features have significant weights for final rescoring. The weight of SpecPearsonNorm is positive, indicating that a high SpecPearsonNorm value between MS2PIP prediction and experimental intensities corresponds to a better hit. The weight of RtDiffBest is negative, indicating that large differences between observed and calculated retention time correspond to a worse score. It is interesting that peptide length becomes a significant feature after adding MS2Rescore features. The positive value demonstrates higher scores for longer peptides. One potential explanation for this phenomenon is that short peptides are less conducive to search engine identification due to fewer fragment ions. For the other two search engines, similar distributions of weights can be observed. SpecPearsonNorm, DotProdIonYNorm, and RtDiffBest features still have significant weights.
 
 % Figure Example
-\begin{figure}[h!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\textwidth]{figures//CPTAC_TMT.png}
 	\caption{Comparison of identification and quantification results for different workflow settings. (A) The number of identified spectra as a function of differing FDR levels for different workflow settings. (B) The number of quantified proteins. The green part indicates the intersection between a workflow and Comet results. (C) The rank of protein abundance from Comet and MSGF+ with MS2Rescore. The red dots represent proteins quantified only in the Comet and MSGF+ with MS2Rescore workflow compared to the Comet and MSGF+ workflow without MS2Rescore. (D) The volcano plot for differential expression analysis from MSstatsTMT. The red dots represent proteins quantified only in the Comet and MSGF+ with MS2Rescore workflow compared to the Comet and MSGF+ workflow without MS2Rescore.}
@@ -94,10 +95,10 @@ Furthermore, we evaluated the performance of the quantms identification workflow
 The power of providing these predictions to Percolator is further illustrated when visualizing the distributions for decoy PSMs, rejected target PSMs, and accepted target PSMs from individual support and consensus supports (Figure 3C, D). The accepted target PSMs are clearly separable from the decoy and rejected target PSMs using only the Pearson correlation coefficient (PCC). The distributions for accepted targets from individual support and consensus supports are highly similar in that they both exhibit low retention time errors and high PCC values. This further demonstrates that quantms is effective for integrating the identification scores of multiple search engines.
 
 % Figure Example
-\begin{figure}[h!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\textwidth]{figures//PXD019643.png}
-	\caption{Comparison of immunopeptides identification results for different workflow settings. (A) Line plot showing the number of spectra identified for four workflow settings at different PSM FDR levels. (B) Percentage of unique identified peptides using different workflow settings. Density plots showing the distribution of the smallest retention time error between observed and predicted retention time (C) and the Pearson correlation between observed and predicted peak intensities (D) for each PSM split into decoys (red), rejected targets with q-value >0.01 (blue), and accepted targets from individual support and consensus support with q-value <0.01 (green). Note that the rejected targets distribution coincides with the decoy distribution.}
+	\caption{Comparison of immunopeptides identification results for different workflow settings. (A) Line plot showing the number of spectra identified for four workflow settings at different PSM FDR levels. (B) Percentage of unique identified peptides using different workflow settings. Density plots showing the distribution of the smallest retention time error between observed and predicted retention time (C) and the Pearson correlation between observed and predicted peak intensities (D) for each PSM split into decoys (red), rejected targets with q-value $>$0.01 (blue), and accepted targets from individual support and consensus support with q-value $<$0.01 (green). Note that the rejected targets distribution coincides with the decoy distribution.}
 	\label{fig:PXD019643_immunopeptides}
 \end{figure}
 
@@ -107,7 +108,7 @@ In addition, we investigated the performance of our quantms workflow with MS2Res
 Protein phosphosite false localization rate (FLR) control is necessary for phosphoproteomics analysis. Therefore, we also investigated the effect of different workflow settings on phosphorylated peptides at different FLR levels (Figure 4B, C). The search engines consensus identification combined with MS2Rescore features increased the number of phosphorylated peptide identifications by 17\% at 0.01 local FLR compared to the approach without MS2Rescore. There are 1,345 phosphorylated peptides quantified only in the consensus identification combined with MS2Rescore process. Considering protein phosphosites, consensus identification combined with the MS2Rescore process newly reports 350 protein phosphorylation sites (Figure 4D). Altogether, these results show that quantms integrated with MS2Rescore can boost performance in phosphoproteomics.
 
 % Figure Example
-\begin{figure}[h!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\textwidth]{figures//phospho2.png}
 	\caption{Comparison of phosphorylated peptide identification results for different workflow settings. (A) Line plot showing the number of spectra identified for four workflow settings at different PSM FDR levels. (B) Line plot showing the number of phosphorylated spectra identified for four workflow settings at different local false localization rate levels after an FDR of less than 0.01 at the PSM level. (C) Venn diagram of peptides quantified for four settings. (D) Venn diagram of protein phosphosites at protein FDR 0.01 and FLR 0.01 for four settings.}
@@ -122,18 +123,18 @@ To demonstrate the applicability and advantages of quantms integrated with MS2Re
 Overall, the results in this publication highlight the synergistic benefits of integrating machine learning-based features within end-to-end, cloud-based proteomics workflows. By embedding MS2Rescore into the quantms pipeline, we provide a practical and accessible solution for the community to leverage cutting-edge spectral prediction and retention time modeling without the need for complex manual configuration. This integrated approach enables reproducible reanalysis of large public datasets, increases identification confidence, and strengthens quantitative conclusions across diverse experimental designs. Future work will focus on expanding this approach to other types of post-translational modifications and exploring the integration of additional machine learning tools to further enhance proteomics data analysis capabilities.
 
 \section*{Acknowledgments}
-We thank all those who supported this research, including funding bodies and the proteomics community for making public datasets available. We also acknowledge the developers of the open-source tools used in this study, including MS2Rescore, MS2PIP, DeepLC, and Percolator, whose contributions made this work possible.
+We thank all those who supported this research, including funding bodies and the proteomics community for making public datasets available. 
+Yasset Perez-Riverol would like to acknowledge funding from EMBL core funding, Wellcome grants (208391/Z/17/Z, 223745/Z/21/Z) and the BBSRC grant ‘DIA-Exchange’ [BB/X001911/1].
 
 % References Section
-\bibliographystyle{abbrv}  % Abbreviated style similar to MCP
-\bibliographystyle{unsrt}
+\bibliographystyle{unsrt}  % Unsorted style for natbib
 \bibliography{references}  % references.bib file contains your bibliography
 
 \renewcommand\thefigure{S\arabic{figure}}
 \setcounter{figure}{0}
 
 % Figure Example
-\begin{figure}[h!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\textwidth]{figures//LFQ_weights.png}
 	\caption{The weights that Percolator assigns to different features of the search engine feature vector in MSGF+ (A), Comet (B), and SAGE (C) combined with Percolator settings from PXD001819. The more different from zero a weight is (both positive and negative), the more important that feature is in the final Percolator classification.}
@@ -141,21 +142,21 @@ We thank all those who supported this research, including funding bodies and the
 \end{figure}
 
 % Figure Example
-\begin{figure}[h!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\textwidth]{figures//CPTAC_weights.png}
 	\caption{The top 20 normalized weights from Percolator for MSGF+ (A), Comet (B), and SAGE (C) identification results from PDC000125.}
 	\label{fig:PDC_ms2rescore_weights}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\textwidth]{figures//PXD019643_weights.png}
 	\caption{The top 20 normalized weights from Percolator for MSGF+ (A) and Comet (B) identification results in the PXD019643 dataset.}
 	\label{fig:PXD019643_features}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
 	\centering
 	\includegraphics[width=1\textwidth]{figures//phos_weights.png}
 	\caption{The top 20 normalized weights from Percolator for MSGF+ (A) and Comet (B) identification results in the PXD026824 dataset.}
