@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2024.1.6)  11 JUN 2025 13:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2024.1.6)  11 JUN 2025 15:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -215,20 +215,20 @@ File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 (d:/software/latex/pro/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.m
 kii
@@ -327,12 +327,12 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
 
 (d:/software/latex/pro/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 24.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
 
 
 (d:/software/latex/pro/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -342,7 +342,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {d:/software/latex/pro/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.ma
 p}] [2] [3]
-Overfull \hbox (3.78273pt too wide) in paragraph at lines 58--58
+Overfull \hbox (3.78273pt too wide) in paragraph at lines 59--59
 []\OT1/cmr/bx/n/14.4 quantms with MS2Rescore en-chanc-ing iden-ti-fi-ca-tion an
 d quan-
  []
@@ -351,7 +351,7 @@ d quan-
 <figures//PXD001819.jpg, id=20, 708.246pt x 303.534pt>
 File: figures//PXD001819.jpg Graphic file (type jpg)
 <use figures//PXD001819.jpg>
-Package pdftex.def Info: figures//PXD001819.jpg  used on input line 69.
+Package pdftex.def Info: figures//PXD001819.jpg  used on input line 70.
 (pdftex.def)             Requested size: 469.75502pt x 201.32883pt.
 
 
@@ -361,31 +361,23 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures//CPTAC_TMT.png, id=27, 650.71909pt x 514.70694pt>
 File: figures//CPTAC_TMT.png Graphic file (type png)
 <use figures//CPTAC_TMT.png>
-Package pdftex.def Info: figures//CPTAC_TMT.png  used on input line 84.
+Package pdftex.def Info: figures//CPTAC_TMT.png  used on input line 85.
 (pdftex.def)             Requested size: 469.75502pt x 371.57828pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7]
-<figures//PXD019643.png, id=33, 532.91898pt x 501.5538pt>
+[7] [8 <./figures//CPTAC_TMT.png>]
+<figures//PXD019643.png, id=37, 532.91898pt x 501.5538pt>
 File: figures//PXD019643.png Graphic file (type png)
 <use figures//PXD019643.png>
-Package pdftex.def Info: figures//PXD019643.png  used on input line 98.
+Package pdftex.def Info: figures//PXD019643.png  used on input line 99.
 (pdftex.def)             Requested size: 469.75502pt x 442.11107pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8 <./figures//CPTAC_TMT.png>]
-Overfull \vbox (31.21599pt too high) has occurred while \output is active []
-
-
-[9 <./figures//PXD019643.png>]
+ [9 <./figures//PXD019643.png>]
 <figures//phospho2.png, id=41, 851.48514pt x 645.08202pt>
 File: figures//phospho2.png Graphic file (type png)
 <use figures//phospho2.png>
-Package pdftex.def Info: figures//phospho2.png  used on input line 114.
+Package pdftex.def Info: figures//phospho2.png  used on input line 115.
 (pdftex.def)             Requested size: 469.75502pt x 355.88878pt.
 
 
@@ -395,7 +387,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures//LFQ_weights.png, id=56, 1351.59354pt x 1138.10796pt>
 File: figures//LFQ_weights.png Graphic file (type png)
 <use figures//LFQ_weights.png>
-Package pdftex.def Info: figures//LFQ_weights.png  used on input line 150.
+Package pdftex.def Info: figures//LFQ_weights.png  used on input line 151.
 (pdftex.def)             Requested size: 469.75502pt x 395.5478pt.
 
 
@@ -404,7 +396,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures//CPTAC_weights.png, id=57, 1337.28407pt x 1138.10796pt>
 File: figures//CPTAC_weights.png Graphic file (type png)
 <use figures//CPTAC_weights.png>
-Package pdftex.def Info: figures//CPTAC_weights.png  used on input line 158.
+Package pdftex.def Info: figures//CPTAC_weights.png  used on input line 159.
 (pdftex.def)             Requested size: 469.75502pt x 399.78514pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -412,7 +404,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures//PXD019643_weights.png, id=58, 1337.28407pt x 540.5796pt>
 File: figures//PXD019643_weights.png Graphic file (type png)
 <use figures//PXD019643_weights.png>
-Package pdftex.def Info: figures//PXD019643_weights.png  used on input line 166
+Package pdftex.def Info: figures//PXD019643_weights.png  used on input line 167
 .
 (pdftex.def)             Requested size: 469.75502pt x 189.89032pt.
 
@@ -421,7 +413,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figures//phos_weights.png, id=59, 1337.28407pt x 626.00275pt>
 File: figures//phos_weights.png Graphic file (type png)
 <use figures//phos_weights.png>
-Package pdftex.def Info: figures//phos_weights.png  used on input line 173.
+Package pdftex.def Info: figures//phos_weights.png  used on input line 174.
 (pdftex.def)             Requested size: 469.75502pt x 219.89706pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -432,7 +424,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Here is how much of TeX's memory you used:
  5755 strings out of 478268
  96596 string characters out of 5840865
- 385345 words of memory out of 5000000
+ 387059 words of memory out of 5000000
  23892 multiletter control sequences out of 15000+600000
  474630 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -444,7 +436,7 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/software/latex/pro/texlive/2022/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/software/latex/pro/texl
 ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/software/latex
 /pro/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (17 pages, 14405929 bytes).
+Output written on main.pdf (17 pages, 14406397 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream
