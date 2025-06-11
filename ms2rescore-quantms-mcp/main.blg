@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: unsrt.bst
+Illegal, another \bibstyle command---line 29 of file main.aux
+ : \bibstyle
+ :          {abbrv}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 30 of file main.aux
+ : \bibstyle
+ :          {unsrt}
+I'm skipping whatever remains of this command
+Illegal, another \bibstyle command---line 32 of file main.aux
+ : \bibstyle
+ :          {unsrt}
+I'm skipping whatever remains of this command
+Database file #1: references.bib
+You've used 10 entries,
+            1791 wiz_defined-function locations,
+            514 strings with 7280 characters,
+and the built_in function-call counts, 3704 in all, are:
+= -- 233
+> -- 377
+< -- 0
++ -- 129
+- -- 119
+* -- 412
+:= -- 676
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 10
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 89
+empty$ -- 240
+format.name$ -- 119
+if$ -- 715
+int.to.chr$ -- 0
+int.to.str$ -- 10
+missing$ -- 10
+newline$ -- 53
+num.names$ -- 10
+pop$ -- 12
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 31
+stack$ -- 0
+substring$ -- 248
+swap$ -- 10
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 27
+width$ -- 12
+write$ -- 111
+(There were 3 error messages)

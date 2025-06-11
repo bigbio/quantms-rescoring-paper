@@ -1,0 +1,85 @@
+\begin{thebibliography}{10}
+
+\bibitem{perez-riverol_pride_2025}
+Yasset Perez-Riverol, Chakradhar Bandla, Deepti J Kundu, Selvakumar
+  Kamatchinathan, Jingwen Bai, Suresh Hewapathirana, Nithu Sara John, Ananth
+  Prakash, Mathias Walzer, Shengbo Wang, and Juan Antonio Vizcaíno.
+\newblock The {PRIDE} database at 20 years: 2025 update.
+\newblock {\em Nucleic Acids Research}, 53(D1):D543--D553, January 2025.
+
+\bibitem{cox_maxquant_2008}
+Jürgen Cox and Matthias Mann.
+\newblock {MaxQuant} enables high peptide identification rates, individualized
+  p.p.b.-range mass accuracies and proteome-wide protein quantification.
+\newblock {\em Nature Biotechnology}, 26(12):1367--1372, December 2008.
+
+\bibitem{wang_pfind_2007}
+Le‐heng Wang, De‐Quan Li, Yan Fu, Hai‐Peng Wang, Jing‐Fen Zhang,
+  Zuo‐Fei Yuan, Rui‐Xiang Sun, Rong Zeng, Si‐Min He, and Wen Gao.
+\newblock {pFind} 2.0: a software package for peptide and protein
+  identification via tandem mass spectrometry.
+\newblock {\em Rapid Communications in Mass Spectrometry}, 21(18):2985--2991,
+  September 2007.
+
+\bibitem{kong_msfragger_2017}
+Andy~T Kong, Felipe~V Leprevost, Dmitry~M Avtonomov, Dattatreya Mellacheruvu,
+  and Alexey~I Nesvizhskii.
+\newblock {MSFragger}: ultrafast and comprehensive peptide identification in
+  mass spectrometry–based proteomics.
+\newblock {\em Nature Methods}, 14(5):513--520, May 2017.
+
+\bibitem{dai_quantms_2024}
+Chengxin Dai, Julianus Pfeuffer, Hong Wang, Ping Zheng, Lukas Käll, Timo
+  Sachsenberg, Vadim Demichev, Mingze Bai, Oliver Kohlbacher, and Yasset
+  Perez-Riverol.
+\newblock quantms: a cloud-based pipeline for quantitative proteomics enables
+  the reanalysis of public proteomics data.
+\newblock {\em Nature Methods}, July 2024.
+
+\bibitem{di_tommaso_nextflow_2017}
+Paolo Di~Tommaso, Maria Chatzou, Evan~W Floden, Pablo~Prieto Barja, Emilio
+  Palumbo, and Cedric Notredame.
+\newblock Nextflow enables reproducible computational workflows.
+\newblock {\em Nature Biotechnology}, 35(4):316--319, April 2017.
+
+\bibitem{wilkinson_fair_2016}
+Mark~D. Wilkinson, Michel Dumontier, IJsbrand~Jan Aalbersberg, Gabrielle
+  Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten,
+  Luiz~Bonino Da~Silva~Santos, Philip~E. Bourne, Jildau Bouwman, Anthony~J.
+  Brookes, Tim Clark, Mercè Crosas, Ingrid Dillo, Olivier Dumon, Scott
+  Edmunds, Chris~T. Evelo, Richard Finkers, Alejandra Gonzalez-Beltran,
+  Alasdair~J.G. Gray, Paul Groth, Carole Goble, Jeffrey~S. Grethe, Jaap
+  Heringa, Peter~A.C ’T~Hoen, Rob Hooft, Tobias Kuhn, Ruben Kok, Joost Kok,
+  Scott~J. Lusher, Maryann~E. Martone, Albert Mons, Abel~L. Packer, Bengt
+  Persson, Philippe Rocca-Serra, Marco Roos, Rene Van~Schaik, Susanna-Assunta
+  Sansone, Erik Schultes, Thierry Sengstag, Ted Slater, George Strawn,
+  Morris~A. Swertz, Mark Thompson, Johan Van Der~Lei, Erik Van~Mulligen, Jan
+  Velterop, Andra Waagmeester, Peter Wittenburg, Katherine Wolstencroft, Jun
+  Zhao, and Barend Mons.
+\newblock The {FAIR} {Guiding} {Principles} for scientific data management and
+  stewardship.
+\newblock {\em Scientific Data}, 3(1):160018, March 2016.
+
+\bibitem{degroeve_ms2pip_2013}
+Sven Degroeve and Lennart Martens.
+\newblock {MS2PIP}: a tool for {MS}/{MS} peak intensity prediction.
+\newblock {\em Bioinformatics (Oxford, England)}, 29(24):3199--3203, December
+  2013.
+
+\bibitem{bouwmeester_deeplc_2021}
+Robbin Bouwmeester, Ralf Gabriels, Niels Hulstaert, Lennart Martens, and Sven
+  Degroeve.
+\newblock {DeepLC} can predict retention times for peptides that carry as-yet
+  unseen modifications.
+\newblock {\em Nature Methods}, 18(11):1363--1369, November 2021.
+
+\bibitem{gessulat_prosit_2019}
+Siegfried Gessulat, Tobias Schmidt, Daniel~Paul Zolg, Patroklos Samaras,
+  Karsten Schnatbaum, Johannes Zerweck, Tobias Knaute, Julia Rechenberger,
+  Bernard Delanghe, Andreas Huhmer, Ulf Reimer, Hans-Christian Ehrlich, Stephan
+  Aiche, Bernhard Kuster, and Mathias Wilhelm.
+\newblock Prosit: proteome-wide prediction of peptide tandem mass spectra by
+  deep learning.
+\newblock {\em Nature Methods}, 16(6):509--518, June 2019.
+
+\end{thebibliography}
