@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2024.1.6)  11 JUN 2025 15:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2024.1.6)  11 JUN 2025 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -367,13 +367,13 @@ Package pdftex.def Info: figures//CPTAC_TMT.png  used on input line 85.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7] [8 <./figures//CPTAC_TMT.png>]
-<figures//PXD019643.png, id=37, 532.91898pt x 501.5538pt>
+[7]
+<figures//PXD019643.png, id=33, 532.91898pt x 501.5538pt>
 File: figures//PXD019643.png Graphic file (type png)
 <use figures//PXD019643.png>
 Package pdftex.def Info: figures//PXD019643.png  used on input line 99.
 (pdftex.def)             Requested size: 469.75502pt x 442.11107pt.
- [9 <./figures//PXD019643.png>]
+ [8 <./figures//CPTAC_TMT.png>] [9 <./figures//PXD019643.png>]
 <figures//phospho2.png, id=41, 851.48514pt x 645.08202pt>
 File: figures//phospho2.png Graphic file (type png)
 <use figures//phospho2.png>
@@ -424,7 +424,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Here is how much of TeX's memory you used:
  5755 strings out of 478268
  96596 string characters out of 5840865
- 387059 words of memory out of 5000000
+ 386059 words of memory out of 5000000
  23892 multiletter control sequences out of 15000+600000
  474630 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -436,7 +436,7 @@ t/fonts/type1/public/amsfonts/cm/cmr10.pfb><d:/software/latex/pro/texlive/2022/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/software/latex/pro/texl
 ive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><d:/software/latex
 /pro/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (17 pages, 14406397 bytes).
+Output written on main.pdf (17 pages, 14406248 bytes).
 PDF statistics:
  99 PDF objects out of 1000 (max. 8388607)
  58 compressed objects within 1 object stream
