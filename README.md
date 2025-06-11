@@ -1,6 +1,12 @@
-# quantms and ms2rescore: Deep Analysis of Large-Scale Public Proteomics Datasets
+# quantms, ms2rescore and multiple search engines enables deep proteome coverage across protein quantification, immunopeptidomics, and phosphoproteomics experiments
 
-This repository contains the manuscript and supporting materials for the research paper "quantms and ms2rescore: deep analysis of large-scale public proteomics datasets" by Dai Chengxin and Yasset Perez-Riverol.
+This repository contains the manuscript and supporting materials for the research paper "quantms, ms2rescore and multiple search engines enables deep proteome coverage across protein quantification, immunopeptidomics, and phosphoproteomics experiments" by:
+
+- **Dai Chengxin**¹'² - State Key Laboratory of Medical Proteomics, Beijing Proteome Research Center, National Center for Protein Sciences (Beijing), Beijing Institute of Lifeomics, Beijing, China; International Academy of Phronesis Medicine (Guangdong), Guangdong, China
+- **Ralf Gabriels**³ - VIB-UGent Center for Medical Biotechnology, VIB, Ghent, Belgium
+- **Robbin Bouwmeester**³ - VIB-UGent Center for Medical Biotechnology, VIB, Ghent, Belgium
+- **Timo Sachsenberg**⁴'⁵ - Department of Computer Science, Applied Bioinformatics, University of Tübingen, Germany; Institute for Bioinformatics and Medical Informatics, University of Tübingen, Germany
+- **Yasset Perez-Riverol**⁶ - European Molecular Biology Laboratory, European Bioinformatics Institute, Wellcome Genome Campus, Cambridge, United Kingdom
 
 ## Abstract
 
@@ -117,18 +123,13 @@ If you use this work, please cite:
 
 ```bibtex
 @article{dai_quantms_ms2rescore_2024,
-    title = {quantms and ms2rescore: deep analysis of large-scale public proteomics datasets},
-    author = {Dai, Chengxin and Perez-Riverol, Yasset},
+    title = {quantms, ms2rescore and multiple search engines enables deep proteome coverage across protein quantification, immunopeptidomics, and phosphoproteomics experiments},
+    author = {Dai, Chengxin and Gabriels, Ralf and Bouwmeester, Robbin and Sachsenberg, Timo and Perez-Riverol, Yasset},
     journal = {[Journal Name]},
     year = {2024},
     note = {In preparation}
 }
 ```
-
-## Authors
-
-- **Dai Chengxin** - Department of Chemistry, University Name, City, Country
-- **Yasset Perez-Riverol** - Department of Biology, Another University, City, Country
 
 ## Links
 
