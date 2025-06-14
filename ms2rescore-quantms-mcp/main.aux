@@ -2,16 +2,17 @@
 \citation{perez-riverol_pride_2025}
 \citation{cox_maxquant_2008}
 \citation{wang_pfind_2007}
-\citation{kong_msfragger_2017}
+\citation{vaudel2015peptideshaker}
 \citation{dai_quantms_2024}
 \citation{di_tommaso_nextflow_2017}
 \citation{wilkinson_fair_2016}
+\citation{dai_quantms_2024,bai2023lfq,ZHENG2025105440}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{2}{}\protected@file@percent }
 \citation{degroeve_ms2pip_2013}
 \citation{bouwmeester_deeplc_2021}
 \citation{gessulat_prosit_2019}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}MS/MS Data and quantms Search Results}{3}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Methods}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}MS/MS Data and quantms Search Results}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Rescoring Features and Postprocessing}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {3}Results}{5}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}quantms with MS2Rescore enhancing identification and quantification in label-free experiments}{5}{}\protected@file@percent }
@@ -19,9 +20,9 @@
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:PXD001819_ms2rescore_pic}{{1}{6}{}{}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}quantms integrated with MS2Rescore improves identification and quantification for large-scale TMT experiments}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Evaluation of quantms integrated with MS2Rescore on HLA Class I Peptides}{7}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Comparison of identification and quantification results for different workflow settings. (A) The number of identified spectra as a function of differing FDR levels for different workflow settings. (B) The number of quantified proteins. The green part indicates the intersection between a workflow and Comet results. (C) The rank of protein abundance from Comet and MSGF+ with MS2Rescore. The red dots represent proteins quantified only in the Comet and MSGF+ with MS2Rescore workflow compared to the Comet and MSGF+ workflow without MS2Rescore. (D) The volcano plot for differential expression analysis from MSstatsTMT. The red dots represent proteins quantified only in the Comet and MSGF+ with MS2Rescore workflow compared to the Comet and MSGF+ workflow without MS2Rescore.}}{8}{}\protected@file@percent }
 \newlabel{fig:PDC_ms2rescore}{{2}{8}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Evaluation of quantms integrated with MS2Rescore on HLA Class I Peptides}{8}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}quantms integrated with MS2Rescore facilitates the identification of phosphorylated peptides}{9}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Comparison of immunopeptides identification results for different workflow settings. (A) Line plot showing the number of spectra identified for four workflow settings at different PSM FDR levels. (B) Percentage of unique identified peptides using different workflow settings. Density plots showing the distribution of the smallest retention time error between observed and predicted retention time (C) and the Pearson correlation between observed and predicted peak intensities (D) for each PSM split into decoys (red), rejected targets with q-value $>$0.01 (blue), and accepted targets from individual support and consensus support with q-value $<$0.01 (green). Note that the rejected targets distribution coincides with the decoy distribution.}}{10}{}\protected@file@percent }
 \newlabel{fig:PXD019643_immunopeptides}{{3}{10}{}{}{}}
@@ -33,13 +34,15 @@
 \bibcite{perez-riverol_pride_2025}{{1}{}{{}}{{}}}
 \bibcite{cox_maxquant_2008}{{2}{}{{}}{{}}}
 \bibcite{wang_pfind_2007}{{3}{}{{}}{{}}}
-\bibcite{kong_msfragger_2017}{{4}{}{{}}{{}}}
+\bibcite{vaudel2015peptideshaker}{{4}{}{{}}{{}}}
 \bibcite{dai_quantms_2024}{{5}{}{{}}{{}}}
 \bibcite{di_tommaso_nextflow_2017}{{6}{}{{}}{{}}}
 \bibcite{wilkinson_fair_2016}{{7}{}{{}}{{}}}
-\bibcite{degroeve_ms2pip_2013}{{8}{}{{}}{{}}}
-\bibcite{bouwmeester_deeplc_2021}{{9}{}{{}}{{}}}
-\bibcite{gessulat_prosit_2019}{{10}{}{{}}{{}}}
+\bibcite{bai2023lfq}{{8}{}{{}}{{}}}
+\bibcite{ZHENG2025105440}{{9}{}{{}}{{}}}
+\bibcite{degroeve_ms2pip_2013}{{10}{}{{}}{{}}}
+\bibcite{bouwmeester_deeplc_2021}{{11}{}{{}}{{}}}
+\bibcite{gessulat_prosit_2019}{{12}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
 \@writefile{lof}{\contentsline {figure}{\numberline {S1}{\ignorespaces The weights that Percolator assigns to different features of the search engine feature vector in MSGF+ (A), Comet (B), and SAGE (C) combined with Percolator settings from PXD001819. The more different from zero a weight is (both positive and negative), the more important that feature is in the final Percolator classification.}}{16}{}\protected@file@percent }
 \newlabel{fig:PXD001819_svm_weights}{{S1}{16}{}{}{}}

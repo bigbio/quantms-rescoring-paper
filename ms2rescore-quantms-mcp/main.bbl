@@ -21,12 +21,11 @@ Le‐heng Wang, De‐Quan Li, Yan Fu, Hai‐Peng Wang, Jing‐Fen Zhang,
 \newblock {\em Rapid Communications in Mass Spectrometry}, 21(18):2985--2991,
   September 2007.
 
-\bibitem{kong_msfragger_2017}
-Andy~T Kong, Felipe~V Leprevost, Dmitry~M Avtonomov, Dattatreya Mellacheruvu,
-  and Alexey~I Nesvizhskii.
-\newblock {MSFragger}: ultrafast and comprehensive peptide identification in
-  mass spectrometry–based proteomics.
-\newblock {\em Nature Methods}, 14(5):513--520, May 2017.
+\bibitem{vaudel2015peptideshaker}
+Marc Vaudel, Julia~M Burkhart, Ren{\'e}~P Zahedi, Eystein Oveland, Frode~S
+  Berven, Albert Sickmann, Lennart Martens, and Harald Barsnes.
+\newblock Peptideshaker enables reanalysis of ms-derived proteomics data sets.
+\newblock {\em Nature biotechnology}, 33(1):22--24, 2015.
 
 \bibitem{dai_quantms_2024}
 Chengxin Dai, Julianus Pfeuffer, Hong Wang, Ping Zheng, Lukas Käll, Timo
@@ -59,6 +58,20 @@ Mark~D. Wilkinson, Michel Dumontier, IJsbrand~Jan Aalbersberg, Gabrielle
 \newblock The {FAIR} {Guiding} {Principles} for scientific data management and
   stewardship.
 \newblock {\em Scientific Data}, 3(1):160018, March 2016.
+
+\bibitem{bai2023lfq}
+Mingze Bai, Jingwen Deng, Chengxin Dai, Julianus Pfeuffer, Timo Sachsenberg,
+  and Yasset Perez-Riverol.
+\newblock Lfq-based peptide and protein intensity differential expression
+  analysis.
+\newblock {\em Journal of Proteome Research}, 22(6):2114--2123, 2023.
+
+\bibitem{ZHENG2025105440}
+Ping Zheng, Enrique Audain, Henry Webel, Chengxin Dai, Joshua Klein,
+  Marc-Phillip Hitz, Timo Sachsenberg, Mingze Bai, and Yasset Perez-Riverol.
+\newblock Ibaqpy: A scalable python package for baseline quantification in
+  proteomics leveraging sdrf metadata.
+\newblock {\em Journal of Proteomics}, 317:105440, 2025.
 
 \bibitem{degroeve_ms2pip_2013}
 Sven Degroeve and Lennart Martens.
