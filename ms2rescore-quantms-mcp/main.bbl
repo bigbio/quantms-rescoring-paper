@@ -42,6 +42,31 @@ Paolo Di~Tommaso, Maria Chatzou, Evan~W Floden, Pablo~Prieto Barja, Emilio
 \newblock Nextflow enables reproducible computational workflows.
 \newblock {\em Nature Biotechnology}, 35(4):316--319, April 2017.
 
+\bibitem{dai_proteomics_2021}
+Chengxin Dai, Anja Füllgrabe, Julianus Pfeuffer, Elizaveta~M. Solovyeva,
+  Jingwen Deng, Pablo Moreno, Selvakumar Kamatchinathan, Deepti~Jaiswal Kundu,
+  Nancy George, Silvie Fexova, Björn Grüning, Melanie~Christine Föll,
+  Johannes Griss, Marc Vaudel, Enrique Audain, Marie Locard-Paulet, Michael
+  Turewicz, Martin Eisenacher, Julian Uszkoreit, Tim Van Den~Bossche, Veit
+  Schwämmle, Henry Webel, Stefan Schulze, David Bouyssié, Savita Jayaram,
+  Vinay~Kumar Duggineni, Patroklos Samaras, Mathias Wilhelm, Meena Choi,
+  Mingxun Wang, Oliver Kohlbacher, Alvis Brazma, Irene Papatheodorou, Nuno
+  Bandeira, Eric~W. Deutsch, Juan~Antonio Vizcaíno, Mingze Bai, Timo
+  Sachsenberg, Lev~I. Levitsky, and Yasset Perez-Riverol.
+\newblock A proteomics sample metadata representation for multiomics
+  integration and big data analysis.
+\newblock {\em Nature Communications}, 12(1):5854, October 2021.
+
+\bibitem{martens_mzmlcommunity_2011}
+Lennart Martens, Matthew Chambers, Marc Sturm, Darren Kessner, Fredrik
+  Levander, Jim Shofstahl, Wilfred~H. Tang, Andreas Römpp, Steffen Neumann,
+  Angel~D. Pizarro, Luisa Montecchi-Palazzi, Natalie Tasman, Mike Coleman,
+  Florian Reisinger, Puneet Souda, Henning Hermjakob, Pierre-Alain Binz, and
+  Eric~W. Deutsch.
+\newblock {mzML}—a {Community} {Standard} for {Mass} {Spectrometry} {Data}.
+\newblock {\em Molecular \& Cellular Proteomics}, 10(1):R110.000133, January
+  2011.
+
 \bibitem{wilkinson_fair_2016}
 Mark~D. Wilkinson, Michel Dumontier, IJsbrand~Jan Aalbersberg, Gabrielle
   Appleton, Myles Axton, Arie Baak, Niklas Blomberg, Jan-Willem Boiten,
@@ -81,5 +106,20 @@ Siegfried Gessulat, Tobias Schmidt, Daniel~Paul Zolg, Patroklos Samaras,
 \newblock Prosit: proteome-wide prediction of peptide tandem mass spectra by
   deep learning.
 \newblock {\em Nature Methods}, 16(6):509--518, June 2019.
+
+\bibitem{buur_ms2_2024}
+Louise~M. Buur, Arthur Declercq, Marina Strobl, Robbin Bouwmeester, Sven
+  Degroeve, Lennart Martens, Viktoria Dorfer, and Ralf Gabriels.
+\newblock {MS}$^{\textrm{2}}$ {Rescore} 3.0 {Is} a {Modular}, {Flexible}, and
+  {User}-{Friendly} {Platform} to {Boost} {Peptide} {Identifications}, as
+  {Showcased} with {MS} {Amanda} 3.0.
+\newblock {\em Journal of Proteome Research}, 23(8):3200--3207, August 2024.
+
+\bibitem{yang_comprehensive_2022}
+Wenjie Yang, Hualin Chen, Lin Ma, Jie Dong, Mengchao Wei, Xiaoqiang Xue,
+  Yingjie Li, Zhaoheng Jin, Weifeng Xu, and Zhigang Ji.
+\newblock A comprehensive analysis of the {FOX} family for predicting kidney
+  renal clear cell carcinoma prognosis and the oncogenic role of {FOXG1}.
+\newblock {\em Aging}, 14(24):10107--10124, December 2022.
 
 \end{thebibliography}
