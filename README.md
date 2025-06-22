@@ -3,11 +3,13 @@
 This repository contains the manuscript and supporting materials for the research paper "quantms, ms2rescore and multiple search engines enables deep proteome coverage across protein quantification, immunopeptidomics, and phosphoproteomics experiments" by:
 
 - **Dai Chengxin**¹'² - State Key Laboratory of Medical Proteomics, Beijing Proteome Research Center, National Center for Protein Sciences (Beijing), Beijing Institute of Lifeomics, Beijing, China; International Academy of Phronesis Medicine (Guangdong), Guangdong, China
-- **Ralf Gabriels**³ - VIB-UGent Center for Medical Biotechnology, VIB, Ghent, Belgium
-- **Robbin Bouwmeester**³ - VIB-UGent Center for Medical Biotechnology, VIB, Ghent, Belgium
+- **Ralf Gabriels**³ - VIB-UGent Center for Medical Biotechnology, VIB, 9052 Ghent, Belgium
+- **Robbin Bouwmeester**³ - VIB-UGent Center for Medical Biotechnology, VIB, 9052 Ghent, Belgium
 - **Jonas Scheid**⁴'⁵'⁶'⁷ - Department of Peptide-based Immunotherapy, Institute of Immunology, University and University Hospital Tübingen, Germany; Cluster of Excellence iFIT (EXC2180) "Image-Guided and Functionally Instructed Tumor Therapies", University of Tübingen, Germany; Quantitative Biology Center (QBiC), University of Tübingen, Germany; Institute for Bioinformatics and Medical Informatics (IBMI), University of Tübingen, Germany
+- **Lennart Martens**³ - VIB-UGent Center for Medical Biotechnology, VIB, 9052 Ghent, Belgium
+- **Oliver Kohlbacher**⁹ - Department of Computer Science, Applied Bioinformatics, University of Tübingen, Tübingen, Germany
 - **Mingze Bai**⁸ - Chongqing Key Laboratory of Big Data for Bio Intelligence, Chongqing University of Posts and Telecommunications, Chongqing, China
-- **Timo Sachsenberg**⁹'⁷ - Department of Computer Science, Applied Bioinformatics, University of Tübingen, Germany; Institute for Bioinformatics and Medical Informatics, University of Tübingen, Germany
+- **Timo Sachsenberg**⁹ - Department of Computer Science, Applied Bioinformatics, University of Tübingen, Tübingen, Germany
 - **Yasset Perez-Riverol**¹⁰ - European Molecular Biology Laboratory, European Bioinformatics Institute, Wellcome Genome Campus, Cambridge, United Kingdom
 
 ## Abstract
@@ -126,7 +128,7 @@ If you use this work, please cite:
 ```bibtex
 @article{dai_quantms_ms2rescore_2024,
     title = {quantms, ms2rescore and multiple search engines enables deep proteome coverage across protein quantification, immunopeptidomics, and phosphoproteomics experiments},
-    author = {Dai, Chengxin and Gabriels, Ralf and Bouwmeester, Robbin and Scheid, Jonas and Bai, Mingze and Sachsenberg, Timo and Perez-Riverol, Yasset},
+    author = {Dai, Chengxin and Gabriels, Ralf and Bouwmeester, Robbin and Scheid, Jonas and Martens, Lennart and Kohlbacher, Oliver and Bai, Mingze and Sachsenberg, Timo and Perez-Riverol, Yasset},
     journal = {[Journal Name]},
     year = {2024},
     note = {In preparation}
