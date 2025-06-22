@@ -64,21 +64,23 @@ Previously, quantms did not leverage measurable peptide properties such as fragm
 To develop and evaluate the performance of the quantms-integrated MS2Rescore workflow, we selected four publicly available benchmark datasets. Three were obtained from the PRIDE Archive under the identifiers PXD001819, PXD019643, and PXD026824, and one from the CPTAC data portal under PDC000127. The PXD001819 dataset contains 48 Sigma UPS1 proteins spiked into a background of yeast cell lysate at nine different concentrations: 0.05, 0.125, 0.25, 0.5, 2.5, 5, 12.5, 25, and 50 fmol/$\mu$L to evaluate quantification performance. We evaluated five different quantms workflow settings: (1) Comet, (2) Comet and MSGF+, (3) Comet with MS2Rescore, (4) Comet and MSGF+ with MS2Rescore, and (5) Comet, MSGF+, and SAGE with MS2Rescore to explore multiple search engines and their integration with MS2Rescore for improved identification and quantification results. All search parameters were the same as described in the previous publication. A stringent FDR at 1\% was applied at peptide spectrum match (PSM) and protein level at the dataset level.The search results from quantms and MaxQuant at the PSM and protein group levels are provided in Supplemental File S1.
 
 \subsection{Rescoring Features and Postprocessing}
- The quantms-rescoring Python package integrates MS2Rescore and calculates a wide range of features based on the DeepLC-predicted and observed retention times, and the MS2PIP-predicted and observed MS2 peak intensities. Signal-to-noise ratio (SNR) features are also calculated for specific cases in the quantms-rescoring Python package. Then, the quantms workflow calculates a posterior error probability for each PSM using Percolator. This is performed under three different feature configurations (1) a baseline model using only search engine-derived features, (2) the baseline model plus MS2Rescore-derived features, and (3) the above combined with SNR features. To merge results from multiple search engines, ConsensusID aggregates PSMs into unified scores. Final PSM-level q-values are then obtained either directly from Percolator or calculated using OpenMS' target-decoy approach based on the predicted probabilities. For phosphoproteomics datasets, LuciPHOr2 is employed to assign site-level localization scores and estimate the associated false localization rate using tools from the OpenMS toolkit.
+ The quantms-rescoring Python package integrates MS2Rescore and calculates a wide range of features based on the DeepLC-predicted and observed retention times, and the MS2PIP-predicted and observed MS2 peak intensities. Signal-to-noise ratio (SNR) features are also calculated for specific cases in the quantms-rescoring Python package. More importantly, to improve compatibility and performance, we have implemented new strategies for model selection, feature export and even model training in the quantms-rescoring package. For RT-related features, retraining DeepLC model is allowed and selecting optimal model with lower MAE in calibration PSMs. The calibration PSMs are selected from each runs in a certain ratio. For MS2 intensity-related features, we implements overfitting experiment in calibration PSMs that are top-scoring 60\% non-decoy PSMs. quantms-rescoring will find the best MS²PIP model for a batch of PSMs by comparing the correlation of the PSMs with the different models. More importantly, quantms-rescoring checks if the MS²PIP results meet the specified correlation threshold and score criteria. It first filters out decoy PSMs, sorts the results based on the PSM score, and selects a calibration set. The method then verifies if at least 80\% of the calibration set has a correlation above the given threshold. we just don't do ms2pip unless forced it if all models picked is bad. It helps the user to avoid providing wrong models and also filters pre-trained models that do not fit the data. In addition, the user can also specify a list to export the specified feature scores. For these steps, each Runs is fully parallelized job, which dramatically reduces the runtime on large-scale data.
+ 
+ Then, the quantms workflow calculates a posterior error probability for each PSM using Percolator. This is performed under three different feature configurations (1) a baseline model using only search engine-derived features, (2) the baseline model plus MS2Rescore-derived features, and (3) the above combined with SNR features. To merge results from multiple search engines, ConsensusID aggregates PSMs into unified scores. Final PSM-level q-values are then obtained either directly from Percolator or calculated using OpenMS' target-decoy approach based on the predicted probabilities. For phosphoproteomics datasets, LuciPHOr2 is employed to assign site-level localization scores and estimate the associated false localization rate using tools from the OpenMS toolkit.
 
 \section{Results}
 
 \subsection{quantms with MS2Rescore Enhances Label-Free Identification and Quantification}
 To systematically evaluate the performance of the quantms-integrated MS2Rescore workflow at both identification and quantification levels, we first analyzed the public benchmark dataset PXD001819. For identification benchmarking, five different workflows configurations were designed and compared, including (1) Comet with Percolator, (2) two search engines with Percolator, (3) Comet with MS2Rescore features and Percolator, (4) two search engines with MS2Rescore features and Percolator, and (5) three search engines with MS2Rescore features and Percolator to determine whether features from intensity-based and retention time-based predictors enhanced the identification and quantification process.
 
-Significant PSMs were filtered based on q-values, and the FDR was used as a key metric to compare workflows. As shown in Figure ~\ref{fig:PXD001819_ms2rescore_pic}, using consensus scores from two search engines significantly increased identification rates at a fixed FDR threshold. Specifically, combining Comet and MSGF+ improved identified spectra by 17\% % over Comet alone, and incorporating MS2PIP and DeepLC features through MS2Rescore led to an additional 16\% % increase. At the quantification level, including MS2Rescore-derived features allowed more low-abundance UPS1 proteins to be quantified (Figure 2B), highlighting the contributions of the integrated workflow.
+Significant PSMs were filtered based on q-values, and the FDR was used as a key metric to compare workflows. As shown in Figure ~\ref{fig:PXD001819_ms2rescore_pic}, using consensus scores from two search engines significantly increased identification rates at a fixed FDR threshold. Specifically, combining Comet and MSGF+ improved identified spectra by 17\% over Comet alone, and incorporating MS2PIP and DeepLC features through MS2Rescore led to an additional 16\% increase. At the quantification level, including MS2Rescore-derived features allowed more low-abundance UPS1 proteins to be quantified (Figure 2B), highlighting the contributions of the integrated workflow. Although MaxQaunt reported more UPS proteins in 2500amol, the proteins that were only quantified in MaxQuant were all quantified by match between runs (MBR) rather than from MS/MS. The main reason for this is that quantms used different MBR quality control.
 
 To better understand the contribution of individual features, we extracted the top 20 feature weights from Percolator (Supplemental Figure 1). Over half of the top-weighted features were derived from MS2Rescore. Notably, SpecPearsonNorm had a strong positive weight, indicating that a better correlation between predicted and observed intensities improves confidence. Conversely, RtDiffBest had a negative weight, suggesting that large deviations in retention time reduce match quality. Interestingly, peptide length also emerged as a significant positive feature after MS2Rescore integration, likely because longer peptides generate more fragment ions and thus are more reliably identified.
 
 % Figure Example
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=1\textwidth]{figures//PXD001819.jpg}
+	\includegraphics[width=1\textwidth]{figures//PXD001819.png}
 	\caption{The number of identified spectra as a function of differing FDR levels for different workflow settings. (A) Results for the PXD001819 dataset. (B) Results for the PXD001819 dataset showing protein quantification. Five different workflow settings are shown: the combination of Comet search engine with Percolator rescoring, the combination of Comet with MSGF+, the combination of two search engines with MS2Rescore features, the combination of two search engines with MS2Rescore and SNR features, and the combination of three search engines with MS2Rescore and SNR features. Multiple search engines consensus identification, additional intensity-based and retention time-based features, and SNR features lead to both higher identification rates and high-quality identification.}
 	\label{fig:PXD001819_ms2rescore_pic}
 \end{figure}
@@ -125,7 +127,7 @@ Given the importance of false localization rate (FLR) control in phosphoproteomi
 \section{Discussion}
 Advancements in deep learning-based tools have significantly improved the accuracy and sensitivity of peptide-spectrum match (PSM) rescoring, yet their integration into streamlined, reproducible, and quantitative proteomics workflows has remained limited, especially for large-scale public data analysis. In this study, we demonstrate the systematic incorporation of MS2Rescore into the open-source quantms pipeline and evaluate its impact across various experimental settings, including label-free quantification (LFQ), tandem mass tag (TMT)-based quantification, immunopeptidomics, and phosphoproteomics. Our results show that enhanced feature sets derived from MS2PIP and DeepLC not only improve identification rates but also translate into gains in quantification depth. Importantly, we provide evidence that the improved identifications via rescoring propagate downstream into quantification, leading to increased numbers of proteins with reliable abundance estimates, as well as enhanced detection of differentially expressed proteins.
 
-To demonstrate the applicability and advantages of quantms integrated with MS2Rescore in quantitative proteomics, we performed a series of reanalyses using publicly available large-scale datasets with well-established benchmarks. In label-free experiments, MS2Rescore-enhanced workflows achieved significant increases in PSM and peptide identification while maintaining or improving quantification reproducibility across replicates. For TMT experiments, the integration of MS2Rescore into quantms increased the number of quantifiable proteins. In more challenging applications, such as immunopeptidomics and phosphoproteomics, the deep learning-based rescoring pipeline consistently yielded higher identification rates and improved sensitivity. These improvements contribute meaningful biological insights, such as phosphosite discovery and the identification of differentially expressed proteins with potential clinical relevance.
+To demonstrate the applicability and advantages of quantms integrated with MS2Rescore in quantitative proteomics, we performed a series of reanalyses using publicly available large-scale datasets with well-established benchmarks. In label-free experiments, MS2Rescore-enhanced workflows achieved significant increases in PSM and peptide identification while maintaining or improving quantification reproducibility across replicates. For TMT experiments, the integration of MS2Rescore into quantms increased the number of quantifiable proteins. In more challenging applications, such as immunopeptidomics and phosphoproteomics, the deep learning-based rescoring pipeline consistently yielded higher identification rates and improved sensitivity. These improvements contribute meaningful biological insights, such as phosphosite discovery and the identification of differentially expressed proteins with potential clinical relevance. In addition, We counted the runtimes with different configurations and it is true that by re-scoring it does add a portion of 30\%-50\% of run-time, as shown as Supplemental Table ~\ref{tab:resources_stats}. This can be alleviated by increasing the number of quantms-rescoring parallels.
 
 Overall, the results in this publication highlight the synergistic benefits of integrating machine learning-based features within end-to-end, cloud-based proteomics workflows. By embedding MS2Rescore into the quantms pipeline, we provide a practical and accessible solution for the community to leverage cutting-edge spectral prediction and retention time modeling without the need for complex manual configuration. This integrated approach enables reproducible reanalysis of large public datasets, increases identification confidence, and strengthens quantitative conclusions across diverse experimental designs. Future work will focus on expanding this approach to other types of post-translational modifications and exploring the integration of additional machine learning tools to further enhance proteomics data analysis capabilities.
 
@@ -136,6 +138,7 @@ Yasset Perez-Riverol would like to acknowledge funding from EMBL core funding, W
 % References Section
 \bibliographystyle{unsrt}  % Unsorted style for natbib
 \bibliography{references}  % references.bib file contains your bibliography
+
 
 \renewcommand\thefigure{S\arabic{figure}}
 \setcounter{figure}{0}
@@ -169,6 +172,30 @@ Yasset Perez-Riverol would like to acknowledge funding from EMBL core funding, W
 	\caption{The top 20 normalized weights from Percolator for MSGF+ (A) and Comet (B) identification results in the PXD026824 dataset.}
 	\label{fig:phospho_features}
 \end{figure}
+
+
+\renewcommand\thetable{S\arabic{table}}
+\setcounter{table}{0}
+
+% Table Example
+\begin{table}[h!]
+	\centering
+	\caption{Running time, memory and CPU consumption for different Configuration. The memory and CPU values represent the maximum resources required for a single job. The quantms is run in 64 cluster queue.}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		Datasets & Configuration & Running Time & Memory & CPU \\
+		\hline
+		PDC000127 & Comet\&MSGF+\&MS2Rescore & 11h28m & 30G & 7 \\
+		PDC000127 & Comet\&MSGF+ & 6h28m & 8G & 4 \\
+		PXD019643 & Comet\&MSGF+\&MS2Rescore & 17h07m & 20G & 8 \\
+		PXD019643 & Comet\&MSGF+ & 13h09m & 5.5G & 4 \\
+		PXD026824 & Comet\&MSGF+\&MS2Rescore & 2h05m & 66G & 8 \\
+		PXD026824 & Comet\&MSGF+ & 1h17m & 48.4G & 4 \\
+		\hline
+	\end{tabular}
+	\label{tab:resources_stats}
+\end{table}
+
 
 \end{document}
 
